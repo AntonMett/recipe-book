@@ -1,10 +1,18 @@
-import { Component } from "@angular/core";
+import { Component, EventEmitter, Output } from "@angular/core";
+
 
 @Component({
-  selector:'app-header',
+  selector: 'app-header',
   templateUrl: './header.component.html'
 })
 
-export class HeaderComponent{
+export class HeaderComponent {
+
+  @Output() navClicked: EventEmitter<any> = new EventEmitter();
+
+
+  navItemClicked(event) {
+    this.navClicked.emit(event.target.text);
+  }
 
 }

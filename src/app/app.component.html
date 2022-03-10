@@ -1,5 +1,5 @@
-<app-header></app-header>
+<app-header (navClicked)="showRoute($event)"></app-header>
 <div class="container">
-  <app-recipe-book></app-recipe-book>
-  <app-shopping-list></app-shopping-list>
+  <app-recipe-book *ngIf="route === 'Recipes'"></app-recipe-book>
+  <app-shopping-list *ngIf="route === 'Shopping List'"></app-shopping-list>
 </div>
